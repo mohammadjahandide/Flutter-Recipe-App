@@ -50,12 +50,12 @@ class RecipeList extends StatelessWidget {
                     Hero(
                       tag: recipes[index].id,
                       child: FadeInImage.assetNetwork(
-                        placeholder: 'assets/Spinner-3.gif',
+                        placeholder: 'assets/images/Spinner-3.gif',
                         image: recipes[index].imageUrl!,
                         imageErrorBuilder: (context, object, stack) {
                           return Center(
                             child: Image.asset(
-                              'assets/noImage.png',
+                              'assets/images/noImage.png',
                               width: size.width * 0.2,
                               height: size.height * 0.2,
                             ),
