@@ -28,6 +28,7 @@ class SearchProvider extends ChangeNotifier {
 
   void clearRecipes() {
     _recipes.clear();
+    status = Error.noError;
   }
 
   Future<void> getData({
