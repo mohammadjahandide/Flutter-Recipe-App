@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipes/screens/random_recipe.dart/ranodm_recipe_screen.dart';
 import 'package:recipes/utils/constants/theme.dart';
 
 void main() {
@@ -13,11 +14,7 @@ class RecipeApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: themeData(context),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Recipe App'),
-        ),
-      ),
+      home: const RandomRecipeScreen(),
     );
   }
 }
