@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:recipes/providers/search_provider.dart';
 import 'package:recipes/screens/random_recipe.dart/ranodm_recipe_screen.dart';
 import 'package:recipes/utils/constants/theme.dart';
 
@@ -11,10 +13,13 @@ class RecipeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: themeData(context),
-      home: const RandomRecipeScreen(),
+    return ChangeNotifierProvider(
+      create: (context) => SearchProvider(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: themeData(context),
+        home: const RandomRecipeScreen(),
+      ),
     );
   }
 }
