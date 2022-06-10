@@ -11,6 +11,7 @@ ThemeData themeData(BuildContext context) {
     primaryColor: const Color.fromARGB(255, 27, 216, 34),
     colorScheme: const ColorScheme.light(
       primary: Colors.white,
+      secondary: Colors.greenAccent,
     ),
     // textTheme: GoogleFonts.ralewayTextTheme(),
     // textTheme: GoogleFonts.dancingScriptTextTheme(),

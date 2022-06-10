@@ -16,28 +16,35 @@ class IngredientList extends StatelessWidget {
         },
       ),
       child: ListView.builder(
-        shrinkWrap: true,
-        scrollDirection: Axis.horizontal,
-        itemCount: ingredients.length,
-        itemBuilder: (context, index) => Card(
-          child: Column(
-            children: [
-              FadeInImage.assetNetwork(
-                placeholder: 'assets/Spinner-3.gif',
-                image:
-                    'https://spoonacular.com/cdn/ingredients_100x100/${ingredients[index].image}',
-                imageErrorBuilder: (context, object, stack) {
-                  return const Center(
-                    child: Text('Not Image Provid'),
-                  );
-                },
+          shrinkWrap: true,
+          scrollDirection: Axis.horizontal,
+          itemCount: ingredients.length,
+          itemBuilder: (context, index) {
+            return Card(
+              child: Column(
+                children: [
+                  Flexible(
+                    child: FadeInImage.assetNetwork(
+                      placeholder: 'assets/images/Spinner-3.gif',
+                      image:
+                          'https://spoonacular.com/cdn/ingredients_100x100/${ingredients[index].image}',
+                      imageErrorBuilder: (context, object, stack) {
+                        return const Center(
+                          child: Text('Not Image Provid'),
+                        );
+                      },
+                    ),
+                  ),
+                  Text(
+                    ingredients[index].name,
+                  ),
+                  Text(
+                    '${ingredients[index].amount} ${ingredients[index].unit}',
+                  ),
+                ],
               ),
-              Text(ingredients[index].name),
-              Text('${ingredients[index].amount} ${ingredients[index].unit}'),
-            ],
-          ),
-        ),
-      ),
+            );
+          }),
     );
   }
 }

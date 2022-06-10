@@ -34,9 +34,9 @@ class Similar extends StatelessWidget {
           );
         } else if (provider.recipes.isEmpty) {
           provider.getData();
-          return const Center(
+          return Center(
             child: CircularProgressIndicator(
-              color: Colors.greenAccent,
+              color: Theme.of(context).colorScheme.secondary,
             ),
           );
         }

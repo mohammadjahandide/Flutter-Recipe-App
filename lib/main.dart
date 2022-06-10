@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:recipes/providers/search_provider.dart';
-import 'package:recipes/screens/random_recipe.dart/ranodm_recipe_screen.dart';
+import 'package:recipes/screens/random_recipe.dart/random_recipe_screen.dart';
 import 'package:recipes/utils/constants/theme.dart';
 
 void main() {

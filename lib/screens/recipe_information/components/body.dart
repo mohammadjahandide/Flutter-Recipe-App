@@ -19,8 +19,10 @@ class Body extends StatelessWidget {
           ((BuildContext context, RecipeInformationProvider provider, child) {
         if (!provider.getInformationCalled) {
           provider.getInformation();
-          return const Center(
-            child: CircularProgressIndicator(),
+          return Center(
+            child: CircularProgressIndicator(
+              color: Theme.of(context).colorScheme.secondary,
+            ),
           );
         }
         if (provider.status != Error.noError) {
@@ -111,10 +113,15 @@ class Body extends StatelessWidget {
                 ),
               ],
             ),
-            ConstrainedBox(
-              constraints: BoxConstraints(
-                maxHeight: size.height * 0.3,
-              ),
+            // ConstrainedBox(
+            //   constraints: BoxConstraints(
+            //     maxHeight: size.height * 0.3,
+            //     maxWidth: size.width,
+            //   ),
+            //   child: IngredientList(ingredients: recipe.ingredients!),
+            // ),
+            SizedBox(
+              height: size.height * 0.3,
               child: IngredientList(ingredients: recipe.ingredients!),
             ),
             Container(
